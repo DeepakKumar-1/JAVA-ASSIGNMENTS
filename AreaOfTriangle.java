@@ -1,22 +1,45 @@
 package com.company;
+
 import java.util.Scanner;
 public class AreaOfTriangle {
-    // Print the Area of the Triangle
+    // Area Of Triangle
     public static void main(String [] args){
+
         /*
-        Area of the Triangle is
-        Area = (Base * height) /2
+           Area of A Triangle in Different cases
+           Case 1: Equilateral Triangle
+                   Area = (side)*(side)* √3 / 4
+           Case 2: Height and Base are Given
+                   Area = 1/2 * h * b
+                   h ----> Height
+                   b ----> Base
+           Case 3: Two Sides and Angle is Given
+                   Area = 1/2 * a * b * sinC
+                   a ----> Side1
+                   b ----> Side2
+                   C ----> Angle Between them
+           Case 4: All Three Sides are Given
+                   Area = √s(s-a)(s-b)(s-c)   ............... Heron's Formula
+                   s ---> Semi-Perimeter of Triangle i.e   s = (a+b+c)/2
+                   a ---> side1
+                   b ---> side2
+                   c ---> side3
          */
 
-        // Creating Scanner Object for taking Input From the USER
+          // Creating Scanner Object for taking input From user
         Scanner sc = new Scanner(System.in);
-        // Taking Required Inputs from the USER
-        System.out.print(" Enter Base and Height Value of the Triangle: ");
+
+        System.out.print(" Enter Base length of the Triangle: ");
         int base = sc.nextInt();
+
+        System.out.print(" Enter Height of the Triangle: ");
         int height = sc.nextInt();
-        // Calculation
-        float area = (float)(base*height) / 2;
-        // Display the Area of the Triangle on the Screen
-        System.out.println(" Area of Triangle with Base value " + base + " Height " + height + " is: " + area);
+
+        // Calculating Area
+        float area = (float) (base * height)/2 ;
+
+        // Displaying Area of the Triangle
+        System.out.println(" Area of the Triangle is: " + area);
+
     }
 }
