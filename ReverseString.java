@@ -1,23 +1,25 @@
 package com.company;
 
 import java.util.Scanner;
-
 public class ReverseString {
-    // Reverse a String
-    public static void main(String [] args){
-        // Creating Scanner Object for Taking Inputs from the USER
-        Scanner sc = new Scanner(System.in);
-        // Take Any String as a Input from the USER
-        System.out.print(" Enter Any String: ");
-        String str = sc.next();
-        // Display Reverse String
-        System.out.println(" Reverse String is: " + reverse(str));
+
+    public static String reverseString(String string){
+        String reverse = "";
+        for(int i = string.length()-1; i>=0; i--){
+            reverse += string.charAt(i);
+        }
+        return reverse;
     }
 
-    static String reverse(String str){
-        String rev = "";
-        for (int i = str.length() -1; i >= 0; i--)
-            rev += str.charAt(i);
-        return rev;
+    public static void main(String [] args){
+        // Creating Scanner Object For taking input from user
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print(" Enter Any String: ");
+        String string = sc.next();
+
+        String result = reverseString(string);
+        System.out.println(" Original String is: " + string );
+        System.out.println(" Reversed String is: " + result );
     }
 }

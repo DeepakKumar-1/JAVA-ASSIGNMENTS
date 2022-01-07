@@ -1,25 +1,44 @@
 package com.company;
 
 import java.util.Scanner;
-
+import java.lang.Math;
 public class LargestNumber {
-    // Take 2 numbers as input and print the largest number.
-    public static void main(String[] args) {
+    public static void main(String [] args){
+        // Find Largest of Three Numbers
 
         // Creating Scanner Object for taking inputs from the user
         Scanner sc = new Scanner(System.in);
 
-        // Taking Two Numbers as a input from the user
+        // Taking First Number From User
         System.out.print(" Enter First Number: ");
-        float num1 = sc.nextFloat();
+        int num1 = sc.nextInt();
 
+        // Taking Second Number From User
         System.out.print(" Enter Second Number: ");
-        float num2 = sc.nextFloat();
+        int num2 = sc.nextInt();
 
-        // Comparing Both the Numbers
-        if (num1 > num2)
-            System.out.println(num1 + " is Greater than " + num2);
-        else
-            System.out.println(num2 + " is Greater than " + num1);
+        // Taking Third Number From User
+        System.out.print(" Enter Third Number: ");
+        int num3 = sc.nextInt();
+
+        int largestNumber = num1 ;
+
+        if(num2 > largestNumber){
+            largestNumber = num2;
+        }
+        if (num3 > largestNumber){
+            largestNumber = num3;
+        }
+        if((num1 == num2) && (num2 == num3)){
+            System.out.println(" All Numbers are Equal ");
+            return ;
+        }
+        System.out.println(" Largest Number is: " + largestNumber);
+
+
+
+        // Using Max function
+        int max = Math.max(num1,Math.max(num2,num3));
+        System.out.println(" Largest Number is: " + max);
     }
 }

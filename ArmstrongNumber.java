@@ -1,39 +1,49 @@
 package com.company;
-import java.lang.Math;
 
 import java.util.Scanner;
 public class ArmstrongNumber {
     public static void main(String [] args){
-        // Creating Scanner Object For Taking inputs from user
+
         Scanner sc = new Scanner(System.in);
 
-        // Taking Number as a input From user
-        System.out.print(" Enter Any Number : ");
+        System.out.print(" Enter Any Number: ");
         int number = sc.nextInt();
 
-        int num = number;
-
-        int number1 =  0;
-        // Firstly calculate the number of digits of a number
-        // Method 1
-        int count = 0;
-        int num1 = number;
-        while(num1>0){
-            count++;
-            num1 = num1/10;
-        }
-        System.out.println(count);
-
-        while(num > 0){
-            int remainder = num % 10;
-            number1 =  number1 + (int)(Math.pow(remainder,count));
-            num = num/10;
-        }
-
-        if (number == number1){
+        if(isArmstrong(number))
             System.out.println(number + " is an Armstrong Number ");
-        } else{
-            System.out.println(number + " is not an Armstrong Number");
-        }
+        else
+            System.out.println(number + " is not an Armstrong Number ");
     }
+
+    static boolean isArmstrong(int number){
+
+        // Calculate the Digits in a number First
+        int numberOfDigits = count(number);
+
+        int sum = sumOfDigitsWithPowerCount(number , numberOfDigits);  // Here copy is Passed so doesn't need to Store
+        // copy of a number in Original number Variable
+
+        return number == sum;
+    }
+
+    static int count(int number){
+        int count = 0;
+        while(number > 0){
+//            int remainder = number % 10;
+            count ++;
+            number /= 10;
+        }
+        return count;
+    }
+
+    static int sumOfDigitsWithPowerCount(int number , int count){
+        int sum = 0;
+        while(number > 0){
+            int remainder = number % 10;
+            sum += Math.pow(remainder,count);
+            number = number /10;
+        }
+        return  sum;
+    }
+
 }
