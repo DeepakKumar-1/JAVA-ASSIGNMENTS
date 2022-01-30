@@ -1,71 +1,46 @@
-package com.company.GraphTheory;
-import java.util.*;
+package com.company.LinkedLists;
 
-class Graph {
-    int v;
-    List<List<Integer>> list = new ArrayList<>();
+public class CycleDetection {
 
-    public Graph(int v){
-        this.v = v;
-    }
-    public void addEdge(int u, int v){
-        List<Integer> set= new ArrayList<>();
-        set.add(u);
-        set.add(v);
-        list.add(set);
+    public static LinkedListNode createNode(int val) {
+        return new LinkedListNode(val);
     }
 
-    // Find
-    public int findSet(int x, int []parent){
-        // Base Case
-        if(parent[x] == -1){
-            return x;
-        }
-        return findSet(parent[x], parent);
-    }
-
-    // Union
-    public void union_set(int x, int y, int [] parent){
-        // Find Out parent of x and y
-        int s1 = findSet(x, parent);
-        int s2 = findSet(y, parent);
-        if(s1 != s2){
-            parent[s2] = s1;
-        }
-    }
-
-    boolean containsCycle(){
-        int [] parent = new int[v+1];
-        Arrays.fill(parent, -1);
-        // iterate over the Edge List
-        for(List<Integer> l : list){
-            int i = l.get(0);
-            int j = l.get(1);
-            int s1 = findSet(i, parent);
-            int s2 = findSet(j, parent);
-            if(s1 != s2){
-                union_set(s1, s2, parent);
-            } else{
-                System.out.println("Same Parent " + s1  + " for " + l);
+    public static boolean hasCycle(LinkedListNode head){
+        LinkedListNode slow, fast;
+        slow = fast = head;
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+            if(slow == fast){
                 return true;
             }
         }
         return false;
     }
-}
 
-public class CycleDetection {
-    public static void main(String [] args){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter Number of Vertices: ");
-        int n = sc.nextInt();
-        Graph graph = new Graph(n);
-        for(int i=0; i<n; i++){
-            int u = sc.nextInt();
-            int v = sc.nextInt();
-            graph.addEdge(u, v);
-        }
-        boolean ans = graph.containsCycle();
-        System.out.print(ans);
+    public static void main(String []args){
+        // Create  a Linked List
+        LinkedListNode head, n1, n2, n3, n4, n5, n6, n7;
+        head = createNode(1);
+        n1 = createNode(2);
+        n2 = createNode(3);
+        n3 = createNode(4);
+        n4 = createNode(5);
+        n5 = createNode(6);
+        n6 = createNode(7);
+        n7 = createNode(8);
+
+        head.next = n1;
+        n1.next = n2;
+        n2.next = n3;
+        n3.next = n4;
+        n4.next = n5;
+        n5.next = n6;
+        n6.next = n7;
+        n7.next = n3;
+
+        System.out.println();
+        System.out.println("Has Cycle: " + hasCycle(head));
     }
 }
