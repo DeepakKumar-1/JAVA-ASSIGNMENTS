@@ -1,0 +1,21 @@
+Modulo Properties :
+1.  (a + b) % m = ((a % m) + (b % m)) % m
+2.  (a - b) % m = ((a % m) - (b % m) + m) % m
+3.  (a * b) % m = ((a % m) * (b % m)) % m
+4.  (a / b) % m = ((a % m)  *  (b^-1 % m)) % m
+
+  b^-1 % m -->  Multiplicative Modulo Inverse (MMI)
+Example:
+     (6 * y) % 7 = 1
+     y is Multiplicative Modulo Inverse For 6 and Y = 6
+
+Multiplicative Modulo Inverse -> b^-1 % m  Means that b and m are Co-Primes
+Co-Prime Means Nothing is Common Except 1 in them
+
+5. (a % m) % m = a % m -> Important
+6. m^x % m = 0  For All x Belongs to Z+ (Positive Integers)
+
+Extra :
+  If p is a Prime Number which is not a divisor of b , then ab^p-1 %  p = a % p due to Fermat's Little theorem
+
+
