@@ -1,33 +1,22 @@
-package com.company;
-
-import java.util.Arrays;
+package ObjectOrientedProg.Polymorphism;
 
 public class MethodOverloading {
     public static void main(String [] args){
-        /*
-        Function Overloading:
-                --> Functions with same NAME but different Parameters
-                is Known as Function Overloading
-                --> Function Overloading is determined at COMPILE TIME
-        Function Overriding is the Concept of OOP
-         */
-
-        sum(2,3);
-        sum(2,3,1);
-        sum(2,1,1,4);
+        Numbers num = new Numbers();
+        System.out.println(num.sum(4,6));
+        System.out.println(num.sum(4,6, 18));
+        System.out.println(num.sum("Deepak ", "Kumar"));
     }
+}
 
-    static void sum(int a, int b){
-        int s = a+b;
-        System.out.format(" Sum of %d and %d is: %d", a,b,s);
+class Numbers{
+    int sum(int a, int b){
+        return a+b;
     }
-
-    static void sum(int a, int b,int c){
-        int s = a+b+c;
-        System.out.format("\n Sum of %d, %d and %d is: %d\n", a,b,c,s);
+    int sum(int a, int b, int c){
+        return a+b+c;
     }
-
-    static void sum(int ...v){
-        System.out.println(Arrays.toString(v));
+    String sum(String a, String b){
+        return a+b;
     }
 }
