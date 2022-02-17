@@ -1,21 +1,12 @@
-package ObjectOrientedProg.Polymorphism;
-
-import ObjectOrientedProg.AccessControls.A;
+package ObjectOrientedProg.StaticExample;
 
 public class Main {
-    public static void main(String [] args){
-        Shapes shape = new Shapes();
-        Circle circle = new Circle();
-        Square square = new Square();
-        shape.area();
-        circle.area();
-        square.area();
-
-        A obj = new A(1, "Deepak Kumar", new int[]{1,2,3});
-        System.out.println(obj.getNum());
-        // By Default num of Class A is Protected so You can't Access num in different Packages
-//        System.out.println(obj.num);
-
-
+    public static void main(String [] args) {
+        Human deepak = new Human("Deepak Kumar", 19, 10000000, false);
+        Human raj = new Human("Deepak Kumar", 19, 10000000, false);
+        System.out.println(deepak.population);
+        System.out.println(raj.population);
+        // Convention :
+        System.out.println(Human.population);
     }
 }
