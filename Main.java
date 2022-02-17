@@ -1,15 +1,14 @@
-package com.company.PriorityQueue;
+package ObjectOrientedProg.ExtendInterfaces;
 
-public class Main {
-    public static void main(String [] args) throws PriorityQueueException{
-        Priority_Queue pq = new Priority_Queue();
-        int []arr = {5,1,9,2,0};
-        for (int element : arr){
-            pq.insert(element);
-        }
-        while(!pq.isEmpty()){
-            System.out.print(pq.removeMin() + " ");
-        }
-        System.out.println();
+public class Main implements B {
+
+    @Override
+    public void fun() {
+
+    }
+
+    @Override
+    public void greet() {
+
     }
 }
