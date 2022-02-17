@@ -2,20 +2,16 @@ package RecursionQues1;
 
 import java.util.Scanner;
 
-public class Palindrome {
-    // Check whether a Given Number is Palindrome or Not
+public class ReverseOfNumber2 {
+    // Reverse a Given Number N
     public static void main(String [] args){
         // Creating Scanner for Taking Input from the USER
         Scanner sc = new Scanner(System.in);
         // take Any Number from the USER
         System.out.print(" Enter Any Number: ");
         int n = sc.nextInt();
-        // Find reverse of a Number
-        int revNum = reverse(n);
-        if(n == revNum)
-            System.out.println(n + " is Palindrome ");
-        else
-            System.out.println(n + " is Not Palindrome ");
+        // Display Reverse of N
+        System.out.println(" Reverse of " + n + " is: " + reverse(n));
     }
     static int reverse(int n){
         int digits = (int)(Math.log10(n)) + 1;
