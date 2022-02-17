@@ -1,0 +1,36 @@
+Inheritance :
+  It is the Important Concept of OOP
+  When One Class is Derived from Another Class this is Known as Inheritance in JAVA
+
+Types of Inheritance
+
+1. Single Inheritance
+     A
+     |
+     B
+2. Multilevel Inheritance
+     A
+     |
+     B
+     |
+     C
+3. Multiple Inheritance   --> Not Supported in JAVA
+     A       B
+     |       |
+      -> C <-
+4. Hierarchial Inheritance
+          A
+      /   |   \
+     B    C    D
+5. Hybrid Inheritance
+ --> It is a Combination of Single Inheritance and Multiple Inheritance
+ --> Since in JAVA Multiple Inheritance is not Supported hence Hybrid Inheritance is Also not Supported
+         A
+      /     \
+     B       C
+     |       |
+      -> D <-
+6. Cyclic Inheritance
+  --> Not Allowed
+        -> A --
+        |_____|

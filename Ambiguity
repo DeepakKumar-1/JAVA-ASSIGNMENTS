@@ -1,0 +1,6 @@
+-> Multiple Inheritance is Not Supported by java
+
+When Both the Parent Class have Same data Member then Child Class
+will Confused Which one to Access This is Known as Ambiguity.
+
+-> Multiple Inheritance Can be Implemented by Using Interfaces
